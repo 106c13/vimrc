@@ -46,6 +46,9 @@ nnoremap <leader>q :wq<CR>
 nnoremap <leader>c :q!<CR>
 nnoremap <leader>e :NERDTreeFind<CR>
 nnoremap <leader>v :topleft vnew<CR>:NERDTree<CR>
+nnoremap <leader>s :new<CR>:NERDTree<CR>
+
+nnoremap <leader>r :\| terminal bash ./.run<CR>
 
 nnoremap <leader>t :sh<CR>
 nnoremap <leader>n :tabe <C-R>=input('New file: ')<CR><CR>
@@ -54,16 +57,17 @@ nnoremap <leader>n :tabe <C-R>=input('New file: ')<CR><CR>
 " Window management
 " ========================
 " Easy window navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <C-h> :vertical resize +2<CR>
+nnoremap <C-j> :resize -2<CR>
+nnoremap <C-k> :resize +2<CR>
+
+nnoremap <C-l> :vertical resize -2<CR>
 
 " Resize windows with Ctrl + Arrow keys
-nnoremap <C-Up> :resize +2<CR>
-nnoremap <C-Down> :resize -2<CR>
-nnoremap <C-Left> :vertical resize -2<CR>
-nnoremap <C-Right> :vertical resize +2<CR>
+nnoremap <C-Up> <C-w>k
+nnoremap <C-Down> <C-w>j
+nnoremap <C-Left> <C-w>h
+nnoremap <C-Right> <C-w>l
 
 nnoremap <Tab>  :tabn <CR>
 nnoremap <S-Tab> :tabp<CR>
@@ -108,6 +112,9 @@ Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 " Syntax highlighting improvements
 Plug 'sheerun/vim-polyglot'
+
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 
 call plug#end()
 
